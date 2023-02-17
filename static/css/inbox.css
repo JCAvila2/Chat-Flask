@@ -1,0 +1,54 @@
+/* Each option container */
+.inbox {
+    width: 90%;
+    margin: 10px auto;
+    background: rgb(0, 56, 241);
+    border-radius: 15px;
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+}
+
+.inbox a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.inbox:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+
+/* Each option inside settings */
+.channel_option {
+    padding: 0px;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.channel_option_image {
+    flex: 1 1 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100px;
+}
+.channel_option_image img {
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.channel_option_username {
+    flex: 1 1 70%;
+    font-size: 30px;
+    color: white;
+    margin: auto;
+    margin-left: 20px;
+    text-align: left;
+}

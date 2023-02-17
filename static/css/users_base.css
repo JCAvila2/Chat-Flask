@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open Sans');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: #fafafa;
+}
+
+h1, h2, h3, h4, p {
+    font-family: 'Merriweather', serif;
+}
+
+.main {
+    width: 70%;
+    margin: 50px auto;
+}
+
+
+/* Nav bar */ 
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00386C;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.navbar-links {
+    height: 100%;
+}
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navbar-links li {
+    list-style: none;
+}
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+.navbar-links li:hover a{
+    background-color: #555;
+}
+.toggle-button {
+    position: absolute;
+    top: 45px;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}

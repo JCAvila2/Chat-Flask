@@ -1,0 +1,35 @@
+{% extends 'users/users_base.html' %}
+{% block title_tab %} Edit Profile - {{ context.username }} {% endblock %}
+{% block bar_option %} <a href="#"><h3> Settings </h3></a> {% endblock %}
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_profile.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <div class="edit_profile">
+        <h1> Edit Profile </h1>
+    
+        <img class="user_image" src="{{ url_for('get_image', id=context.id) }}" alt="" ></img> 
+        <form action="/upload_image" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" required>
+            <button type="submit" name="change" class="register"> Upload </button>
+        </form>
+
+        <form method="POST" action="/update_email">
+            <div class="txt_field">
+                <input id="email" name="email" type="text" class="form-control" value="{{context.email}}" required>
+                <label> Email </label>
+            </div>
+            <button type="submit" class="register"> Edit Email </button>
+        </form>
+
+        <form method="POST" action="">
+            <div class="txt_field">
+                <input id="password" name="password" type="password" required>
+                <label> New Password </label>
+            </div>
+            <button type="submit" class="register"> Edit Password </button>
+        </form>
+    </div>
+{% endblock %}

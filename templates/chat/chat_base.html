@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> {% block title_tab %} Default Title {% endblock %} </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat_base.css') }}">
+    </head>
+    <body>
+        <!-- Header - Nav bar -->
+        <nav class="navbar">
+            <div class="brand-title" style="color: white;"><a href="/" style="text-decoration: none; color:white;"> <h3 style="display:inline-block; padding-left: 10px;"> Chat App </h3></a></div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+                <ul>
+                    <li>
+                        <a href="{{ url_for('my_profile') }}"> 
+                            <div class="profile_container">    
+                                <div class="profile_image_container">
+                                    {% block my_profile_picture %}{% endblock %}
+                                </div>
+                                <div class="profile_text_container">                    
+                                    <h3>My Profile</h3> 
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <div class="dropdown">
+                            <a><h3>Options</h3></a>
+                            <div class="dropdown-content">
+                                <a href="#" class="opciones-menu-redes">Settings</a>
+                                <a href="#" class="opciones-menu-redes">New Chat</a>
+                                <a href="#" class="opciones-menu-redes">Other Option</a>
+                                <a href="#" class="opciones-menu-redes">Other Option</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <div>
+            {% block content %}
+                <h2>Base content</h2>
+            {% endblock %}
+        </div>
+    
+        
+        <script>
+            const toggle_button = document.getElementsByClassName("toggle-button")[0]
+            const navbar_links = document.getElementsByClassName("navbar-links")[0]
+            toggle_button.addEventListener("click", () => {
+                navbar_links.classList.toggle("active")
+            });
+        </script>
+    
+    
+    </body>
+</html>

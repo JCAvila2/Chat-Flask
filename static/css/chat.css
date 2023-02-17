@@ -1,0 +1,212 @@
+/* Entire content block container */
+.all_container {
+    position: relative;
+    display: flex;
+}
+
+.all_channels_container_style {
+    flex: 1 1 20%;
+    height: 100%;
+}
+
+.actual_chat_container {
+    flex: 1 1 80%;
+}
+
+
+
+/* Messages container */
+.all_messages_container_style {
+    background-color: #fff;
+    width: 100%;
+    height: calc(70vh);
+    margin: 0px;
+    overflow-y: auto;
+    border-bottom: 1px solid #e6e6e6;
+    right: 0px;
+}
+
+/* Each message */
+.ms_container {
+    margin: 1.2rem auto;
+    width: 35%;
+    padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+}
+
+/* log user message */
+.my_message_container_style {
+    margin-right: 5px;
+    background-color: rgb(29, 161, 242);
+    color: #fff;
+    border-bottom-left-radius: 16px; 
+    border-top-left-radius: 16px; 
+    border-top-right-radius: 16px; 
+    padding: 10px;
+}
+.my_message_time { 
+    font-size: 10px;
+    text-align: right;
+    padding-top: 5px;
+}
+
+/* Other user message */
+.message_container_style {
+    margin-left: 5px;
+    background-color: red;
+    color: #fff;
+    border-bottom-right-radius: 16px; 
+    border-top-left-radius: 16px; 
+    border-top-right-radius: 16px; 
+    padding: 10px;
+}
+.message_time { 
+    font-size: 10px;
+    text-align: left;
+    padding-top: 5px;
+}
+
+
+/* Form */ 
+.form_message {
+    width: 100%;
+    margin: 0px;
+    border: 1px solid #e6e6e6; 
+}
+
+.form_message input {
+    height: 100%;
+}
+
+.form_container {
+    position: relative;
+    display: flex;
+    height: 7vh;
+}
+
+.form_text {
+    flex: 1 1 95%;
+}
+.form_button {
+    flex: 1 1 5%;
+}
+
+#id_message {
+    height: 98%;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.button_send {
+    background-color: #98ca3f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-bottom: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    width: 100%; 
+    height: 100%;
+    font-size: 14px;
+}
+
+
+/* Channels container */
+.selected_channel_option {
+    background-color: rgb(0, 10, 100);
+    padding: 20px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    margin: 5px;
+}
+.selected_channel_option:hover {
+    background-color: gray;
+    font-weight: bold;
+}
+
+
+.channel_option {
+    background-color: rgb(0, 132, 255);
+    padding: 20px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    margin: 5px;
+}
+.channel_option:hover {
+    background-color: #98ca3f;
+    font-weight: bold;
+}
+
+/* Each channel inside content */
+.channel_option_image {
+    flex: 1 1 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+.channel_option_image img {
+    flex-shrink:0;
+    -webkit-flex-shrink: 0;
+    max-width:100%;
+    max-height:100%;
+    border-radius: 50%;
+}
+
+.channel_option_username {
+    flex: 1 1 70%;
+    font-size: 25px;
+    color: white;
+    margin: auto;
+    margin-left: 20px;
+}
+
+
+/* other user profile */
+.other_user_profile_container {
+    background-color: grey;
+    display: flex;
+    position: relative;
+    height: 100px;
+}
+
+.other_user_profile_image {
+    flex: 1 1 10%;
+    display: flex;
+}
+.other_user_profile_image img {
+    width: auto;
+    height: auto;
+    margin: 0.5vw;
+    border-radius: 50%;
+}
+
+.other_user_profile_name {
+    flex: 1 1 90%;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: left;
+    color: white;
+    margin: auto;
+}
+
+
+@media (max-width: 1300px) {
+    .all_channels_container_style {
+        display: none;
+    }
+
+    .other_user_profile_container  {
+        height: 10vh;
+    }
+}

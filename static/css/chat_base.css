@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Open Sans');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+body {
+    background-color: #fafafa;
+}
+
+.main {
+    width: 70%;
+    margin: 50px auto;
+}
+
+
+/* Nav bar */ 
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00386C;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.navbar-links {
+    height: 100%;
+}
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.navbar-links li {
+    list-style: none;
+    margin: 0px;
+}
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+.navbar-links li:hover a{
+    background-color: #555;
+}
+.toggle-button {
+    position: absolute;
+    top: 2vh;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+/* Options bar */
+.dropbtn {
+    background-color: #00386C;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Open Sans";
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+.opciones-menu-redes {
+    background-color: #00386C!important;
+    text-align: left;
+}
+.opciones-menu-redes:hover {
+    background-color: #555!important;
+    text-align: center;
+}
+
+
+/* Nav bar my profile option */
+.profile_container {
+    display: flex;
+    position: relative;
+}
+.profile_image_container {
+    flex: 1 1 30%;
+}
+.profile_image_container img {
+    height: 5vh;
+    width: auto;
+    margin-right: 1vw;
+    margin-top: -0.8vh;
+    border-radius: 50%;
+}
+
+.profile_text_container {
+    flex: 1 1 70%;
+    margin: 0;
+}
+
+
+/* Changes for resolutions lower than 800px */
+@media (max-width: 1300px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .toggle-button {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+        padding: 10px;
+    }
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links ul li {
+        text-align: center;
+    }
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+    .navbar-links li div {
+        position: relative;
+        width: 100%;
+        margin: auto;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+
+
+    /* My profile option */
+    .profile_container {
+        display: flex;
+        position: relative;
+
+    }
+    .profile_image_container {
+        flex: 1 1 0%;
+    }
+    .profile_image_container img {
+        display: none; 
+    }
+
+    .profile_text_container {
+        flex: 1 1 100%;
+        margin: 0;
+    }
+}

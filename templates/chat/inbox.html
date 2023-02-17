@@ -1,0 +1,14 @@
+{% extends 'chat/chat_base.html' %}
+{% block title_tab %} Inbox {% endblock %}
+{% block my_profile_picture %} <img src="{{ url_for('get_image', id=context.my_id) }}" alt=""></img> {% endblock %}
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/inbox.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='js/inbox.js') }}"></script>
+    </head>
+    
+    <div id = "channels_container" style="text-align:center;"> <h1 style="margin-top:40vh;"> Loading your chats... </h1> </div>
+
+
+{% endblock %}

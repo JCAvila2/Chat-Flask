@@ -1,0 +1,20 @@
+{% extends 'users/users_base.html' %}
+{% block title_tab %} My Profile {% endblock %}
+{% block bar_option %} <a href="#"><h3> Settings </h3></a> {% endblock %}
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_profile.css') }}"> <!-- css file -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <img src="{{ url_for('get_image', id=context.user_id) }}" class="user_image" alt=""></img> 
+    <div class = "user_name"> {{ context.username }} </div>
+    <div class = "user_id"> #{{ context.user_id }} </div>
+    <div class = "user_email"> {{ context.email }} </div>
+    
+    <div class = "buttons_container"> 
+        <div class = "buttons_element"> <button class = "change_profile_button" onclick="location.href='{{ url_for('edit_profile') }}'"> Edit Profile </button> </div>
+        <div class = "buttons_element"> <button class = "logout_button" onclick="location.href='{{ url_for('logout') }}'"> Log Out </button> </div>
+        <div class = "buttons_element"> <button class = "map_button" onclick="location.href='{{ url_for('inbox') }}'"> Go Back to Inbox </button> </div>
+    </div>
+{% endblock %}

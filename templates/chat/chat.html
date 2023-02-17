@@ -1,0 +1,52 @@
+{% extends 'chat/chat_base.html' %}
+
+{% block title_tab %} Chats - {{ context.username }} {% endblock %}
+
+{% block my_profile_picture %} <img src="{{ url_for('get_image', id=context.my_id) }}" alt=""></img> {% endblock %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat.css') }}">
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    </head>
+
+    <div class = "all_container">
+
+        <div id = "channels_container" class = "all_channels_container_style"> Loading Chats </div>
+        
+        <div class="actual_chat_container">
+
+            <a href="../profiles/{{username}}" style = "text-decoration: none;">
+                <div class = "other_user_profile_container"> 
+                    <div class = "other_user_profile_image"> 
+                        <img src="{{ url_for('get_image', id=context.user_id) }}" alt=""></img> 
+                    </div>  
+                    <div class="other_user_profile_name">  
+                        {{ context.username }}
+                    </div> 
+                    <div id="channel_id" style="display:none;" value = "{{ context.channel_id }}"></div>
+                </div>
+            </a>
+
+            <div id = "messages_container" class = "all_messages_container_style"></div>
+
+            <div class = "form_message">
+                <div class="form_container">
+                    <div class="form_text">
+                        <input id="message_input" class="form_message" type="text" autocomplete="off">
+                        <input type="hidden" id="channel_id" value="{{ context.channel_id }}">
+                        <input type="hidden" id="user_id" value="{{ context.user_id }}">
+                    </div>
+                    <div class="form_button">
+                        <button type="submit" class="button_send" id="send_button"> Send </button>
+                    </div>
+                </div>
+            </div>
+            
+        <div>
+
+    </div>
+
+
+{% endblock %}

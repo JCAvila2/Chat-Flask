@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title_tab %} Default Title {% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/users_base.css') }}">
+    </head>
+    <body>
+        <!-- Header - Nav bar -->
+        <nav class="navbar">
+            <div class="brand-title" style="color: white;"><a href="{{ url_for('login') }}" style="text-decoration: none; color:white;"> <!-- i class="fa fa-graduation-cap" style="margin-left: 30px; font-size:65px; position:relative; top: 15px;"></!--> <h3 style="display:inline-block; padding-left: 10px;"> Chat App </h3></a></div>
+            <a href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="navbar-links" style="right: 10px;">
+                <ul>
+                    <li>{% block bar_option %} <a href="{{ url_for('login') }}"><h3> Default Option </h3></a> {% endblock %}</li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Content -->
+        <div class = "main">
+        {% block content %}
+            <h2>Base content</h2>
+        {% endblock %}
+        </div>
+    </body>
+</html>

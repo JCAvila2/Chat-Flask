@@ -1,0 +1,40 @@
+{% extends 'users/users_base.html' %}
+
+{% block title_tab %} Sign Up {% endblock %}
+
+{% block bar_option %} <a href="{{ url_for('login') }}"><h3> Log In </h3></a> {% endblock %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}" >  
+    </head>
+
+    <div class="register_form">
+        <h1> Sign Up </h1>
+        
+        <form method="POST" action="">
+            <h2 style="text-align:center">{{message}}</h2>
+            <div class="txt_field">
+                <input id="username" name="username" type="text" class="form-control" required>
+                <label> Username </label>
+            </div>
+            <div class="txt_field">
+                <input id="email" name="email" type="email" class="form-control" required>
+                <label> Email </label>
+            </div>
+            <div class="txt_field">
+                <input id="password" name="password" type="password" required>
+                <label> Password </label>
+            </div>
+            <div class="txt_field">
+                <input id="password_confirmation" name="password_confirmation" type="password" required>
+                <label> Confirm Password </label>
+            </div>
+            <button type="submit" name="createUser" class="register"> Sign Up </button>
+            <div class="register">
+                Already have an account?<a href="{{ url_for('login') }}"> Log In </a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
